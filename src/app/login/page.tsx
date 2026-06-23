@@ -1,0 +1,42 @@
+import Link from "next/link";
+import type { Metadata } from "next";
+import AuthForm from "@/components/AuthForm";
+import Logo from "@/components/Logo";
+import { login } from "@/app/auth/actions";
+import { isSupabaseConfigured } from "@/lib/supabase/config";
+
+export const metadata: Metadata = {
+  title: "Connexion espace propriétaires",
+};
+
+export default function LoginPage() {
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-center bg-sea-light px-6 py-12">
+      <div className="w-full max-w-md">
+        <div className="mb-8 text-center">
+          <Logo />
+        </div>
+        <div className="rounded-2xl bg-white p-8 shadow-lg ring-1 ring-sand">
+          <h1 className="text-2xl font-bold">Espace propriétaires</h1>
+          <p className="mt-1 mb-6 text-sm text-stone">
+            Accédez au suivi de vos villas, réservations et revenus.
+          </p>
+
+          {!isSupabaseConfigured && (
+            <p className="mb-6 rounded-lg bg-terracotta/15 px-4 py-3 text-sm text-terracotta-dark">
+              L&apos;espace propriétaires nécessite la configuration de Supabase
+              (voir le README). La vitrine publique reste accessible.
+            </p>
+          )}
+
+          <AuthForm mode="login" action={login} />
+        </div>
+        <p className="mt-6 text-center text-sm text-stone">
+          <Link href="/" className="hover:text-sea">
+            ← Retour au site
+          </Link>
+        </p>
+      </div>
+    </main>
+  );
+}

@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette méditerranéenne */
+  --color-sea: #1b6ca8;
+  --color-sea-dark: #0e4d6b;
+  --color-sea-light: #e6f0f6;
+  --color-terracotta: #d98e5a;
+  --color-terracotta-dark: #c2703b;
+  --color-sand: #f4ede3;
+  --color-cream: #fbf7f0;
+  --color-ink: #2a2622;
+  --color-stone: #6b635a;
+
+  /* Polices */
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+}
+
+:root {
+  --background: #fbf7f0;
+  --foreground: #2a2622;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+}
+
+.transition-base {
+  transition: all 0.3s ease;
+}
