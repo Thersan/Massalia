@@ -1,10 +1,10 @@
 -- =====================================================================
---  Massalia — Données de démonstration
+--  Massalia's Villa — Données de démonstration (seed)
 --
 --  PRÉREQUIS : crée d'abord un compte de démo via la page /signup du site
 --  avec l'email ci-dessous, PUIS exécute ce script dans Supabase.
 --
---  Email de démo : proprietaire@massalia-villas.fr
+--  Email de démo : thersanjle01@gmail.com
 -- =====================================================================
 
 do $$
@@ -13,7 +13,7 @@ declare
 begin
   select id into owner
   from auth.users
-  where email = 'proprietaire@massalia-villas.fr'
+  where email = 'thersanjle01@gmail.com'
   limit 1;
 
   if owner is null then

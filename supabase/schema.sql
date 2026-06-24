@@ -1,9 +1,8 @@
 -- =====================================================================
---  Massalia — Schéma de la base de données (espace propriétaires)
+--  Massalia's Villa — Schéma de la base de données (espace propriétaires)
 --  À exécuter dans l'éditeur SQL de Supabase.
 --  Idempotent : peut être relancé sans risque.
 -- =====================================================================
-
 -- ---------- Profils ----------
 create table if not exists public.profiles (
   id         uuid primary key references auth.users (id) on delete cascade,
